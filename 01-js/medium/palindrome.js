@@ -4,6 +4,18 @@
 */
 
 function isPalindrome(str) {
+  str = str.toLowerCase(); // Convert the string to lowercase
+
+  str = str.replace(/[^a-z0-9]/g, ""); // Remove non-alphanumeric characters
+
+  // str = str.replace(/[^a-z0-9]/g, ""); is a regular expression that matches anything that is not (^) a lowercase letter (a-z) or a digit (0-9) and replaces it with an empty string ("")
+  // we can use regex.com to test regular expressions
+
+  for (let i = 0; i < str.length / 2; i++) {
+    if (str[i] != str[str.length - 1 - i]) {
+      return false;
+    }
+  }
   return true;
 }
 
